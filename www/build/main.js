@@ -54,11 +54,12 @@ webpackEmptyAsyncContext.id = 216;
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__create_issue_create_issue__ = __webpack_require__(265);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__issue_map_issue_map__ = __webpack_require__(356);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__issue_list_issue_list__ = __webpack_require__(357);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__providers_auth_auth__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__create_issue_create_issue__ = __webpack_require__(265);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__issue_map_issue_map__ = __webpack_require__(356);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__issue_list_issue_list__ = __webpack_require__(357);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -73,22 +74,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var HomePage = (function () {
-    function HomePage(navCtrl) {
+    function HomePage(navCtrl, auth) {
         this.navCtrl = navCtrl;
+        this.auth = auth;
         this.tabs = [
-            { title: 'New Issue', icon: 'add', component: __WEBPACK_IMPORTED_MODULE_2__create_issue_create_issue__["a" /* CreateIssuePage */] },
-            { title: 'Issue Map', icon: 'map', component: __WEBPACK_IMPORTED_MODULE_3__issue_map_issue_map__["a" /* IssueMapPage */] },
-            { title: 'Issue List', icon: 'list', component: __WEBPACK_IMPORTED_MODULE_4__issue_list_issue_list__["a" /* IssueListPage */] }
+            { title: 'New Issue', icon: 'add', component: __WEBPACK_IMPORTED_MODULE_3__create_issue_create_issue__["a" /* CreateIssuePage */] },
+            { title: 'Issue Map', icon: 'map', component: __WEBPACK_IMPORTED_MODULE_4__issue_map_issue_map__["a" /* IssueMapPage */] },
+            { title: 'Issue List', icon: 'list', component: __WEBPACK_IMPORTED_MODULE_5__issue_list_issue_list__["a" /* IssueListPage */] }
         ];
     }
+    HomePage.prototype.logOut = function () {
+        this.auth.logOut();
+    };
     HomePage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"D:\Ecole\HEIG-VD\3eme\AppMob\citizen_engagement_appMob\src\pages\home\home.html"*/'<ion-tabs>\n  <ion-tab *ngFor=\'let tab of tabs\' [tabTitle]=\'tab.title\' [tabIcon]=\'tab.icon\' [root]=\'tab.component\'></ion-tab>\n</ion-tabs>\n'/*ion-inline-end:"D:\Ecole\HEIG-VD\3eme\AppMob\citizen_engagement_appMob\src\pages\home\home.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({
+            selector: 'page-home',template:/*ion-inline-start:"D:\Ecole\HEIG-VD\3eme\AppMob\citizen_engagement_appMob\src\pages\home\home.html"*/'<ion-header> <ion-navbar> <ion-title>AppMob-Citizen\nEngagement</ion-title> <ion-buttons end>\n<button ion-button icon-only (click)="logOut()">\n	<ion-icon name="log-out"></ion-icon>\n</button>\n</ion-buttons> </ion-navbar> </ion-header>\n\n<ion-content> <page-issue-map></page-issue-map> </ion-content>\n'/*ion-inline-end:"D:\Ecole\HEIG-VD\3eme\AppMob\citizen_engagement_appMob\src\pages\home\home.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__providers_auth_auth__["a" /* AuthProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__providers_auth_auth__["a" /* AuthProvider */]) === "function" && _b || Object])
     ], HomePage);
     return HomePage;
+    var _a, _b;
 }());
 
 //# sourceMappingURL=home.js.map
@@ -327,9 +334,9 @@ var IssueMapPage = (function () {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.mapMarkers = [
-            Object(__WEBPACK_IMPORTED_MODULE_2_leaflet__["marker"])([46.778186, 6.641524]).bindTooltip('Hello'),
-            Object(__WEBPACK_IMPORTED_MODULE_2_leaflet__["marker"])([46.780796, 6.647395]),
-            Object(__WEBPACK_IMPORTED_MODULE_2_leaflet__["marker"])([46.784992, 6.652267])
+            Object(__WEBPACK_IMPORTED_MODULE_2_leaflet__["marker"])([46.778186, 6.641524]).bindTooltip('Marker1').on('click', this.onClickMarker),
+            Object(__WEBPACK_IMPORTED_MODULE_2_leaflet__["marker"])([46.780796, 6.647395]).bindTooltip('Marker2').on('click', this.onClickMarker),
+            Object(__WEBPACK_IMPORTED_MODULE_2_leaflet__["marker"])([46.784992, 6.652267]).bindTooltip('Marker3').on('click', this.onClickMarker)
         ];
         this.mapOptions = {
             layers: [
@@ -350,13 +357,17 @@ var IssueMapPage = (function () {
             console.log("Map moved to " + center.lng + ", " + center.lat);
         });
     };
+    IssueMapPage.prototype.onClickMarker = function (event) {
+        alert("hi. you clicked the marker at " + event.latlng);
+    };
     IssueMapPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-issue-map',template:/*ion-inline-start:"D:\Ecole\HEIG-VD\3eme\AppMob\citizen_engagement_appMob\src\pages\issue-map\issue-map.html"*/'<div class=\'map\' leaflet [leafletOptions]=\'mapOptions\' [leafletLayers]=\'mapMarkers\' (leafletMapReady)=\'onMapReady($event)\'></div>\n'/*ion-inline-end:"D:\Ecole\HEIG-VD\3eme\AppMob\citizen_engagement_appMob\src\pages\issue-map\issue-map.html"*/,
+            selector: 'page-issue-map',template:/*ion-inline-start:"D:\Ecole\HEIG-VD\3eme\AppMob\citizen_engagement_appMob\src\pages\issue-map\issue-map.html"*/'<div class=\'map\' leaflet [leafletOptions]=\'mapOptions\'\n	[leafletLayers]=\'mapMarkers\' (leafletMapReady)=\'onMapReady($event)\'></div>\n\n\n\n'/*ion-inline-end:"D:\Ecole\HEIG-VD\3eme\AppMob\citizen_engagement_appMob\src\pages\issue-map\issue-map.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavParams */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavParams */]) === "function" && _b || Object])
     ], IssueMapPage);
     return IssueMapPage;
+    var _a, _b;
 }());
 
 //# sourceMappingURL=issue-map.js.map

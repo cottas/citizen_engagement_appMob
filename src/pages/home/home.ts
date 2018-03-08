@@ -1,3 +1,4 @@
+import { AuthProvider } from "../../providers/auth/auth";
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
@@ -19,12 +20,18 @@ export class HomePage {
 
   tabs: HomePageTab[];
 
-  constructor(public navCtrl: NavController) {
+  constructor(
+    public navCtrl: NavController,
+    private auth: AuthProvider
+) {
     this.tabs = [
       { title: 'New Issue', icon: 'add', component: CreateIssuePage },
       { title: 'Issue Map', icon: 'map', component: IssueMapPage },
       { title: 'Issue List', icon: 'list', component: IssueListPage }
     ];
+  }
+   logOut() {
+    this.auth.logOut();
   }
 
 }

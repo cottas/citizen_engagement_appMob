@@ -20,9 +20,9 @@ export class IssueMapPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.mapMarkers = [
-      marker([ 46.778186, 6.641524 ]).bindTooltip('Hello'),
-      marker([ 46.780796, 6.647395 ]),
-      marker([ 46.784992, 6.652267 ])
+      marker([ 46.778186, 6.641524 ]).bindTooltip('Marker1').on('click', this.onClickMarker),
+      marker([ 46.780796, 6.647395 ]).bindTooltip('Marker2').on('click', this.onClickMarker),
+      marker([ 46.784992, 6.652267 ]).bindTooltip('Marker3').on('click', this.onClickMarker)
     ];
 
     this.mapOptions = {
@@ -45,5 +45,10 @@ export class IssueMapPage {
       console.log(`Map moved to ${center.lng}, ${center.lat}`);
     });
   }
-
+  
+ onClickMarker(event){
+   alert("hi. you clicked the marker at " + event.latlng);
+ }
+ 
+  
 }

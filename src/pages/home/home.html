@@ -1,3 +1,8 @@
-<ion-tabs>
-  <ion-tab *ngFor='let tab of tabs' [tabTitle]='tab.title' [tabIcon]='tab.icon' [root]='tab.component'></ion-tab>
-</ion-tabs>
+<ion-header> <ion-navbar> <ion-title>AppMob-Citizen
+Engagement</ion-title> <ion-buttons end>
+<button ion-button icon-only (click)="logOut()">
+	<ion-icon name="log-out"></ion-icon>
+</button>
+</ion-buttons> </ion-navbar> </ion-header>
+
+<ion-content> <page-issue-map></page-issue-map> </ion-content>
