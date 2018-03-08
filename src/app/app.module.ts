@@ -19,6 +19,7 @@ import { LoginPage } from '../pages/login/login';
 import { AuthProvider } from '../providers/auth/auth';
 import { AuthInterceptorProvider } from '../providers/auth-interceptor/auth-interceptor';
 import { PictureProvider } from '../providers/picture/picture';
+import { IssuesProvider } from '../providers/issues/issues';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { PictureProvider } from '../providers/picture/picture';
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorProvider, multi: true },
     Geolocation,
     Camera,
-    PictureProvider
+    PictureProvider,
+    IssuesProvider
   ]
 })
 export class AppModule {}
