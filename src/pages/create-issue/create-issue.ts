@@ -4,7 +4,7 @@ import { NavController, NavParams, Platform } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
 
 import { config } from '../../app/config';
-import { QimgImage } from '../../models/qimg-image';
+import { QimgImage } from '../../models/qimg-image';
 import { AuthProvider } from '../../providers/auth/auth';
 import { PictureProvider } from '../../providers/picture/picture';
 
