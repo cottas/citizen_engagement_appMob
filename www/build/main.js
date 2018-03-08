@@ -58,7 +58,7 @@ webpackEmptyAsyncContext.id = 216;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__create_issue_create_issue__ = __webpack_require__(265);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__issue_map_issue_map__ = __webpack_require__(356);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__issue_list_issue_list__ = __webpack_require__(357);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__issue_list_issue_list__ = __webpack_require__(358);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -84,7 +84,7 @@ var HomePage = (function () {
     }
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"D:\Ecole\HEIG-VD\3eme\AppMob\citizen_engagement_appMob\src\pages\home\home.html"*/'<ion-tabs>\n  <ion-tab *ngFor=\'let tab of tabs\' [tabTitle]=\'tab.title\' [tabIcon]=\'tab.icon\' [root]=\'tab.component\'></ion-tab>\n</ion-tabs>\n'/*ion-inline-end:"D:\Ecole\HEIG-VD\3eme\AppMob\citizen_engagement_appMob\src\pages\home\home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"C:\Users\cedri\webserv\citizen_engagement_appMob\src\pages\home\home.html"*/'<ion-tabs>\n\n  <ion-tab *ngFor=\'let tab of tabs\' [tabTitle]=\'tab.title\' [tabIcon]=\'tab.icon\' [root]=\'tab.component\'></ion-tab>\n\n</ion-tabs>\n\n'/*ion-inline-end:"C:\Users\cedri\webserv\citizen_engagement_appMob\src\pages\home\home.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
     ], HomePage);
@@ -100,12 +100,12 @@ var HomePage = (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CreateIssuePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(70);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__ = __webpack_require__(262);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_config__ = __webpack_require__(144);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_auth_auth__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_auth_auth__ = __webpack_require__(59);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_picture_picture__ = __webpack_require__(355);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -168,7 +168,7 @@ var CreateIssuePage = (function () {
     };
     CreateIssuePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({
-            selector: 'page-create-issue',template:/*ion-inline-start:"D:\Ecole\HEIG-VD\3eme\AppMob\citizen_engagement_appMob\src\pages\create-issue\create-issue.html"*/'<!--\n  Generated template for the CreateIssuePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>CreateIssue</ion-title>\n\n    <!-- Logout button -->\n    <ion-buttons end>\n      <button ion-button icon-only (click)="logOut()">\n        <ion-icon name="log-out"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  Let\'s create an issue.\n  <button ion-button (click)=\'takePicture()\'>Take picture</button>\n  <img *ngIf=\'picture\' [src]=\'picture.url\' />\n</ion-content>\n'/*ion-inline-end:"D:\Ecole\HEIG-VD\3eme\AppMob\citizen_engagement_appMob\src\pages\create-issue\create-issue.html"*/,
+            selector: 'page-create-issue',template:/*ion-inline-start:"C:\Users\cedri\webserv\citizen_engagement_appMob\src\pages\create-issue\create-issue.html"*/'<!--\n\n  Generated template for the CreateIssuePage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>CreateIssue</ion-title>\n\n\n\n    <!-- Logout button -->\n\n    <ion-buttons end>\n\n      <button ion-button icon-only (click)="logOut()">\n\n        <ion-icon name="log-out"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  Let\'s create an issue.\n\n  <button ion-button (click)=\'takePicture()\'>Take picture</button>\n\n  <img *ngIf=\'picture\' [src]=\'picture.url\' />\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\cedri\webserv\citizen_engagement_appMob\src\pages\create-issue\create-issue.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_5__providers_auth_auth__["a" /* AuthProvider */],
             __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__["a" /* Geolocation */],
@@ -190,7 +190,7 @@ var CreateIssuePage = (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PictureProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(70);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__ = __webpack_require__(263);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Observable__ = __webpack_require__(0);
@@ -304,6 +304,7 @@ var PictureProvider = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_leaflet__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_leaflet___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_leaflet__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_issues_issues__ = __webpack_require__(357);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -316,6 +317,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 /**
  * Generated class for the IssueMapPage page.
  *
@@ -323,14 +325,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var IssueMapPage = (function () {
-    function IssueMapPage(navCtrl, navParams) {
+    function IssueMapPage(navCtrl, navParams, issues) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.mapMarkers = [
-            Object(__WEBPACK_IMPORTED_MODULE_2_leaflet__["marker"])([46.778186, 6.641524]).bindTooltip('Hello'),
-            Object(__WEBPACK_IMPORTED_MODULE_2_leaflet__["marker"])([46.780796, 6.647395]),
-            Object(__WEBPACK_IMPORTED_MODULE_2_leaflet__["marker"])([46.784992, 6.652267])
-        ];
+        this.issues = issues;
         this.mapOptions = {
             layers: [
                 Object(__WEBPACK_IMPORTED_MODULE_2_leaflet__["tileLayer"])('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18 })
@@ -340,7 +338,17 @@ var IssueMapPage = (function () {
         };
     }
     IssueMapPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad IssueMapPage');
+        var _this = this;
+        this.issues.getIssues(50).subscribe(function (data) {
+            _this.mapMarkers = [];
+            data.forEach(function (element) {
+                var newMarker = Object(__WEBPACK_IMPORTED_MODULE_2_leaflet__["marker"])([element.location.coordinates[1], element.location.coordinates[0]]).on('click', _this.onClickMarker);
+                _this.mapMarkers.push(newMarker);
+            });
+        });
+    };
+    IssueMapPage.prototype.onClickMarker = function (event) {
+        alert("hi. you clicked the marker at " + event.latlng);
     };
     IssueMapPage.prototype.onMapReady = function (map) {
         var _this = this;
@@ -352,11 +360,12 @@ var IssueMapPage = (function () {
     };
     IssueMapPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-issue-map',template:/*ion-inline-start:"D:\Ecole\HEIG-VD\3eme\AppMob\citizen_engagement_appMob\src\pages\issue-map\issue-map.html"*/'<div class=\'map\' leaflet [leafletOptions]=\'mapOptions\' [leafletLayers]=\'mapMarkers\' (leafletMapReady)=\'onMapReady($event)\'></div>\n'/*ion-inline-end:"D:\Ecole\HEIG-VD\3eme\AppMob\citizen_engagement_appMob\src\pages\issue-map\issue-map.html"*/,
+            selector: 'page-issue-map',template:/*ion-inline-start:"C:\Users\cedri\webserv\citizen_engagement_appMob\src\pages\issue-map\issue-map.html"*/'<div class=\'map\' leaflet [leafletOptions]=\'mapOptions\' [leafletLayers]=\'mapMarkers\' (leafletMapReady)=\'onMapReady($event)\'></div>\n\n'/*ion-inline-end:"C:\Users\cedri\webserv\citizen_engagement_appMob\src\pages\issue-map\issue-map.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavParams */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__providers_issues_issues__["a" /* IssuesProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_issues_issues__["a" /* IssuesProvider */]) === "function" && _c || Object])
     ], IssueMapPage);
     return IssueMapPage;
+    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=issue-map.js.map
@@ -367,10 +376,59 @@ var IssueMapPage = (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return IssuesProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var URL_API = 'https://comem-citizen-engagement.herokuapp.com/api';
+/*
+  Generated class for the ProvidersIssuesProvider provider.
+
+  See https://angular.io/guide/dependency-injection for more info on providers
+  and Angular DI.
+*/
+var IssuesProvider = (function () {
+    function IssuesProvider(http) {
+        this.http = http;
+    }
+    IssuesProvider.prototype.getIssues = function (pageSize) {
+        if (!pageSize) {
+            return this.http.get(URL_API + '/issues');
+        }
+        else {
+            return this.http.get(URL_API + '/issues?pageSize=' + pageSize);
+        }
+    };
+    IssuesProvider = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["b" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["b" /* HttpClient */]) === "function" && _a || Object])
+    ], IssuesProvider);
+    return IssuesProvider;
+    var _a;
+}());
+
+//# sourceMappingURL=issues.js.map
+
+/***/ }),
+
+/***/ 358:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return IssueListPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__issue_details_issue_details__ = __webpack_require__(358);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__issue_details_issue_details__ = __webpack_require__(359);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -404,7 +462,7 @@ var IssueListPage = (function () {
     };
     IssueListPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-issue-list',template:/*ion-inline-start:"D:\Ecole\HEIG-VD\3eme\AppMob\citizen_engagement_appMob\src\pages\issue-list\issue-list.html"*/'<!--\n  Generated template for the IssueListPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>IssueList</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  Let\'s list the issues.\n  <button ion-button (click)=\'goToDetails()\'>Go to details</button>\n</ion-content>\n'/*ion-inline-end:"D:\Ecole\HEIG-VD\3eme\AppMob\citizen_engagement_appMob\src\pages\issue-list\issue-list.html"*/,
+            selector: 'page-issue-list',template:/*ion-inline-start:"C:\Users\cedri\webserv\citizen_engagement_appMob\src\pages\issue-list\issue-list.html"*/'<!--\n\n  Generated template for the IssueListPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>IssueList</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  Let\'s list the issues.\n\n  <button ion-button (click)=\'goToDetails()\'>Go to details</button>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\cedri\webserv\citizen_engagement_appMob\src\pages\issue-list\issue-list.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavParams */]])
     ], IssueListPage);
@@ -415,7 +473,7 @@ var IssueListPage = (function () {
 
 /***/ }),
 
-/***/ 358:
+/***/ 359:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -449,7 +507,7 @@ var IssueDetailsPage = (function () {
     };
     IssueDetailsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-issue-details',template:/*ion-inline-start:"D:\Ecole\HEIG-VD\3eme\AppMob\citizen_engagement_appMob\src\pages\issue-details\issue-details.html"*/'<!--\n  Generated template for the IssueDetailsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>IssueDetails</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  Details: {{ navParams.data.foo }}\n</ion-content>\n'/*ion-inline-end:"D:\Ecole\HEIG-VD\3eme\AppMob\citizen_engagement_appMob\src\pages\issue-details\issue-details.html"*/,
+            selector: 'page-issue-details',template:/*ion-inline-start:"C:\Users\cedri\webserv\citizen_engagement_appMob\src\pages\issue-details\issue-details.html"*/'<!--\n\n  Generated template for the IssueDetailsPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>IssueDetails</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  Details: {{ navParams.data.foo }}\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\cedri\webserv\citizen_engagement_appMob\src\pages\issue-details\issue-details.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavParams */]])
     ], IssueDetailsPage);
@@ -460,15 +518,15 @@ var IssueDetailsPage = (function () {
 
 /***/ }),
 
-/***/ 359:
+/***/ 360:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_auth_request__ = __webpack_require__(700);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_auth__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_auth_request__ = __webpack_require__(701);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_auth__ = __webpack_require__(59);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -517,7 +575,7 @@ var LoginPage = (function () {
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* NgForm */])
     ], LoginPage.prototype, "form", void 0);
     LoginPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"D:\Ecole\HEIG-VD\3eme\AppMob\citizen_engagement_appMob\src\pages\login\login.html"*/'<!--\n  Generated template for the LoginPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Login</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <form (submit)="onSubmit($event)">\n    <ion-list>\n\n      <!-- Name input -->\n      <ion-item>\n        <ion-label floating>Name</ion-label>\n        <ion-input type="text" name="name" #nameInput="ngModel" [(ngModel)]="authRequest.name" required></ion-input>\n      </ion-item>\n\n      <!-- Error message displayed if the name is invalid -->\n      <ion-item *ngIf="nameInput.invalid && nameInput.dirty" no-lines>\n        <p ion-text color="danger">Name is required.</p>\n      </ion-item>\n\n      <!-- Password input -->\n      <ion-item>\n        <ion-label floating>Password</ion-label>\n        <ion-input type="password" name="password" #passwordInput="ngModel" [(ngModel)]="authRequest.password" required></ion-input>\n      </ion-item>\n\n      <!-- Error message displayed if the password is invalid -->\n      <ion-item *ngIf="passwordInput.invalid && passwordInput.dirty" no-lines>\n        <p ion-text color="danger">Password is required.</p>\n      </ion-item>\n\n    </ion-list>\n\n    <div padding>\n\n      <!-- Submit button -->\n      <button type="submit" [disabled]="form.invalid" ion-button block>Log in</button>\n\n      <!-- Error message displayed if the login failed -->\n      <p *ngIf="loginError" ion-text color="danger">Name or password is invalid.</p>\n\n    </div>\n  </form>\n</ion-content>\n'/*ion-inline-end:"D:\Ecole\HEIG-VD\3eme\AppMob\citizen_engagement_appMob\src\pages\login\login.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\cedri\webserv\citizen_engagement_appMob\src\pages\login\login.html"*/'<!--\n\n  Generated template for the LoginPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Login</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <form (submit)="onSubmit($event)">\n\n    <ion-list>\n\n\n\n      <!-- Name input -->\n\n      <ion-item>\n\n        <ion-label floating>Name</ion-label>\n\n        <ion-input type="text" name="name" #nameInput="ngModel" [(ngModel)]="authRequest.name" required></ion-input>\n\n      </ion-item>\n\n\n\n      <!-- Error message displayed if the name is invalid -->\n\n      <ion-item *ngIf="nameInput.invalid && nameInput.dirty" no-lines>\n\n        <p ion-text color="danger">Name is required.</p>\n\n      </ion-item>\n\n\n\n      <!-- Password input -->\n\n      <ion-item>\n\n        <ion-label floating>Password</ion-label>\n\n        <ion-input type="password" name="password" #passwordInput="ngModel" [(ngModel)]="authRequest.password" required></ion-input>\n\n      </ion-item>\n\n\n\n      <!-- Error message displayed if the password is invalid -->\n\n      <ion-item *ngIf="passwordInput.invalid && passwordInput.dirty" no-lines>\n\n        <p ion-text color="danger">Password is required.</p>\n\n      </ion-item>\n\n\n\n    </ion-list>\n\n\n\n    <div padding>\n\n\n\n      <!-- Submit button -->\n\n      <button type="submit" [disabled]="form.invalid" ion-button block>Log in</button>\n\n\n\n      <!-- Error message displayed if the login failed -->\n\n      <p *ngIf="loginError" ion-text color="danger">Name or password is invalid.</p>\n\n\n\n    </div>\n\n  </form>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\cedri\webserv\citizen_engagement_appMob\src\pages\login\login.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__providers_auth_auth__["a" /* AuthProvider */]])
     ], LoginPage);
@@ -528,13 +586,13 @@ var LoginPage = (function () {
 
 /***/ }),
 
-/***/ 360:
+/***/ 361:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(361);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(365);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(362);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(366);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -542,37 +600,39 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 365:
+/***/ 366:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(70);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__asymmetrik_ngx_leaflet__ = __webpack_require__(366);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__asymmetrik_ngx_leaflet__ = __webpack_require__(367);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_splash_screen__ = __webpack_require__(256);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_status_bar__ = __webpack_require__(260);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_storage__ = __webpack_require__(261);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_geolocation__ = __webpack_require__(262);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_camera__ = __webpack_require__(263);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__app_component__ = __webpack_require__(421);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__app_component__ = __webpack_require__(422);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_home_home__ = __webpack_require__(264);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_create_issue_create_issue__ = __webpack_require__(265);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_issue_details_issue_details__ = __webpack_require__(358);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_issue_list_issue_list__ = __webpack_require__(357);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_issue_details_issue_details__ = __webpack_require__(359);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_issue_list_issue_list__ = __webpack_require__(358);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_issue_map_issue_map__ = __webpack_require__(356);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_login_login__ = __webpack_require__(359);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__providers_auth_auth__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__providers_auth_interceptor_auth_interceptor__ = __webpack_require__(701);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_login_login__ = __webpack_require__(360);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__providers_auth_auth__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__providers_auth_interceptor_auth_interceptor__ = __webpack_require__(702);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__providers_picture_picture__ = __webpack_require__(355);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__providers_issues_issues__ = __webpack_require__(357);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -634,7 +694,8 @@ var AppModule = (function () {
                 { provide: __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HTTP_INTERCEPTORS */], useClass: __WEBPACK_IMPORTED_MODULE_18__providers_auth_interceptor_auth_interceptor__["a" /* AuthInterceptorProvider */], multi: true },
                 __WEBPACK_IMPORTED_MODULE_8__ionic_native_geolocation__["a" /* Geolocation */],
                 __WEBPACK_IMPORTED_MODULE_9__ionic_native_camera__["a" /* Camera */],
-                __WEBPACK_IMPORTED_MODULE_19__providers_picture_picture__["a" /* PictureProvider */]
+                __WEBPACK_IMPORTED_MODULE_19__providers_picture_picture__["a" /* PictureProvider */],
+                __WEBPACK_IMPORTED_MODULE_20__providers_issues_issues__["a" /* IssuesProvider */]
             ]
         })
     ], AppModule);
@@ -645,7 +706,7 @@ var AppModule = (function () {
 
 /***/ }),
 
-/***/ 421:
+/***/ 422:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -655,8 +716,8 @@ var AppModule = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(260);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(256);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(264);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_login_login__ = __webpack_require__(359);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_auth_auth__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_login_login__ = __webpack_require__(360);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_auth_auth__ = __webpack_require__(59);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -694,7 +755,7 @@ var MyApp = (function () {
         });
     }
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"D:\Ecole\HEIG-VD\3eme\AppMob\citizen_engagement_appMob\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"D:\Ecole\HEIG-VD\3eme\AppMob\citizen_engagement_appMob\src\app\app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\cedri\webserv\citizen_engagement_appMob\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n\n'/*ion-inline-end:"C:\Users\cedri\webserv\citizen_engagement_appMob\src\app\app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_6__providers_auth_auth__["a" /* AuthProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
@@ -705,15 +766,15 @@ var MyApp = (function () {
 
 /***/ }),
 
-/***/ 58:
+/***/ 59:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(70);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(261);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__ = __webpack_require__(422);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__ = __webpack_require__(423);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_operators__ = __webpack_require__(89);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_operators___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_operators__);
@@ -786,7 +847,7 @@ var AuthProvider = (function () {
 
 /***/ }),
 
-/***/ 700:
+/***/ 701:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -801,7 +862,7 @@ var AuthRequest = (function () {
 
 /***/ }),
 
-/***/ 701:
+/***/ 702:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -809,7 +870,7 @@ var AuthRequest = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_operators__ = __webpack_require__(89);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_operators___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_operators__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__auth_auth__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__auth_auth__ = __webpack_require__(59);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -853,5 +914,5 @@ var AuthInterceptorProvider = (function () {
 
 /***/ })
 
-},[360]);
+},[361]);
 //# sourceMappingURL=main.js.map
