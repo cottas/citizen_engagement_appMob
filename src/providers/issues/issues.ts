@@ -3,6 +3,7 @@ import {Injectable} from '@angular/core';
 import {Issue} from '../../models/issue';
 import {Comment} from '../../models/comment';
 import {Observable} from 'rxjs/Observable';
+import { config } from '../../app/config';
 
 const URL_API = 'https://comem-citizen-engagement.herokuapp.com/api';
 

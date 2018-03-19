@@ -1,8 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { NavController, NavParams, Platform } from 'ionic-angular';
+import { Platform } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
-import { NgForm } from '@angular/forms';
 
 import { config } from '../../app/config';
 import { QimgImage } from '../../models/qimg-image';
@@ -24,12 +23,12 @@ import { IssuesProvider } from '../../providers/issues/issues';
 export class CreateIssuePage {
   picture: QimgImage;
   issue : Issue ;
+  formIssueError: boolean;
+  
   constructor(
     private auth: AuthProvider,
     private geolocation: Geolocation,
     private httpClient: HttpClient,
-    private navCtrl: NavController,
-    private navParams: NavParams,
     private pictureService: PictureProvider,
     private platform: Platform,
     private issuesProvider : IssuesProvider
