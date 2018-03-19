@@ -21,7 +21,20 @@
 
 
 <ion-content padding>
-  Let's create an issue.
-  <button ion-button (click)='takePicture()'>Take picture</button>
-  <img *ngIf='picture' [src]='picture.url' />
+  Let's create an issue
+  <form #form="ngForm">
+      <!-- Description input -->
+      <ion-item>
+        <ion-label floating>Description</ion-label>
+        <ion-input type="text" name="description"  [(ngModel)]="issue.description"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Tags</ion-label>
+        <ion-input type="text" name="tags"  [(ngModel)]="issue.tags"></ion-input>
+      </ion-item>
+      <button ion-button (click)='takePicture()'>Take picture</button>
+      <img *ngIf='picture' [src]='picture.url' />
+      <!-- Submit button input -->
+      <button type="submit" (click)='onSubmit($event)' [disabled]="form.invalid" ion-button block>Log in</button>
+  </form>
 </ion-content>

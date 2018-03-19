@@ -1,8 +1,8 @@
 import { Issue } from "../../models/issue";
-import {Component} from '@angular/core';
-import {NavController, NavParams, ModalController} from 'ionic-angular';
-import {latLng, Map, MapOptions, Marker, tileLayer} from 'leaflet';
-import {IssuesProvider} from '../../providers/issues/issues';
+import { Component } from '@angular/core';
+import { NavController, NavParams, ModalController } from 'ionic-angular';
+import { latLng, Map, MapOptions, Marker, tileLayer } from 'leaflet';
+import { IssuesProvider } from '../../providers/issues/issues';
 import { IssueDetailsPage } from "../issue-details/issue-details";
 import * as L from "leaflet";
 
@@ -47,43 +47,43 @@ export class IssueMapPage {
     
   onMapReady(map: Map) {
     this.map = map;
-    this.issues.getIssues(50).subscribe(data => {
-      this.mapMarkers = [];
-      data.forEach(element => {
-        //console.log(element);
-        const newMarker = L.marker([element.location.coordinates[1], element.location.coordinates[0]]).on('click', () => {
-        this.onClickMarker(element);
-      }).bindTooltip(element.description);
-        this.mapMarkers.push(newMarker);
-      });
-    });
+    
+    this.getAllIssues();
+
     this.map.on('moveend', () => {
       const center = this.map.getCenter();
       console.log(`Map moved to ${center.lng}, ${center.lat}`);
     });
+  }
+    
+  async getAllIssues() {
+    var resBody = true;
+    var page = 1;
+    this.mapMarkers = [];
+    while (resBody) {
+        const data = await this.issues.getIssues(page, 50);
+        console.log(data);
+        console.log(data.length);
+        if (data.length == 0) {
+           resBody = false;
+        } else {
+            data.forEach(element => {
+                const newMarker = L.marker([element.location.coordinates[1], element.location.coordinates[0]]).on('click', () => {
+                    this.onClickMarker(element);
+                }).bindTooltip(element.description);
+                this.mapMarkers.push(newMarker);
+            });
+            page++;
+        }
+    }
   }
   
   openModal(issue: Issue){
    let profileModal = this.modalCtrl.create(IssueDetailsPage, {selected_issue:issue});
    profileModal.present();
   }
+    
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
