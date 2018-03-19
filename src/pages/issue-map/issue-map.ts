@@ -1,7 +1,7 @@
-import {Component} from '@angular/core';
-import {NavController, NavParams} from 'ionic-angular';
-import {latLng, Map, MapOptions, marker, Marker, tileLayer} from 'leaflet';
-import {IssuesProvider} from '../../providers/issues/issues';
+import { Component } from '@angular/core';
+import { NavController, NavParams } from 'ionic-angular';
+import { latLng, Map, MapOptions, marker, Marker, tileLayer } from 'leaflet';
+import { IssuesProvider } from '../../providers/issues/issues';
 
 /**
  * Generated class for the IssueMapPage page.
@@ -35,36 +35,36 @@ export class IssueMapPage {
 
   onMapReady(map: Map) {
     this.map = map;
-    this.issues.getIssues(50).subscribe(data => {
-      console.log(data);
-      this.mapMarkers = [];
-      data.forEach(element => {
-        const newMarker = marker([element.location.coordinates[1], element.location.coordinates[0]]).on('click', this.onClickMarker);
-        this.mapMarkers.push(newMarker);
-      });
-    });
+    
+    this.getAllIssues();
+      
     this.map.on('moveend', () => {
       const center = this.map.getCenter();
       console.log(`Map moved to ${center.lng}, ${center.lat}`);
     });
   }
+    
+  async getAllIssues() {
+    var resBody = true;
+    var page = 1;
+    this.mapMarkers = [];
+    while (resBody) {
+        const data = await this.issues.getIssues(page, 50);
+        console.log(data);
+        console.log(data.length);
+        if (data.length == 0) {
+           resBody = false;
+        } else {
+            data.forEach(element => {
+                const newMarker = marker([element.location.coordinates[1], element.location.coordinates[0]]).on('click', this.onClickMarker);
+                this.mapMarkers.push(newMarker);
+            });
+            page++;
+        }
+    }
+  }
+    
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

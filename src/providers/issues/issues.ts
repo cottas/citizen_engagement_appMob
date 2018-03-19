@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Issue } from '../../models/issue';
-import { Observable } from 'rxjs/Observable';
+//import { Observable } from 'rxjs/Observable';
 
 
 const URL_API = 'https://comem-citizen-engagement.herokuapp.com/api';
@@ -19,12 +19,8 @@ export class IssuesProvider {
     
   }
     
-    getIssues(pageSize: number) : Observable<Issue[]> {
-        if (!pageSize) {
-            return this.http.get<Issue[]>(URL_API + '/issues');
-        } else {
-            return this.http.get<Issue[]>(URL_API + '/issues?pageSize=' + pageSize);
-        }
+    getIssues(page: number, pageSize: number) : Promise<Issue[]> {
+        return this.http.get<Issue[]>(URL_API + '/issues?page=' + page + '&pageSize=' + pageSize).toPromise();
     }
 
 }
