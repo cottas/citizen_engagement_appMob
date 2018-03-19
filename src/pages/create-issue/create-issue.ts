@@ -9,7 +9,7 @@ import { QimgImage } from '../../models/qimg-image';
 import { AuthProvider } from '../../providers/auth/auth';
 import { PictureProvider } from '../../providers/picture/picture';
 import { Issue } from '../../models/issue';
-import { IssueProvider } from '../../providers/issue/issue';
+import { IssuesProvider } from '../../providers/issues/issues';
 
 /**
  * Generated class for the CreateIssuePage page.
@@ -32,7 +32,7 @@ export class CreateIssuePage {
     private navParams: NavParams,
     private pictureService: PictureProvider,
     private platform: Platform,
-    private issueProvider : IssueProvider
+    private issuesProvider : IssuesProvider
   ) {
     this.issue = new Issue();
     console.log(this.issue);
@@ -81,7 +81,7 @@ export class CreateIssuePage {
     // Hide any previous login error.
     //this.loginError = false;
     // Insertion of the issue into the API .
-    this.issueProvider.insertData(this.issue).subscribe(issue=>{
+    this.issuesProvider.insertData(this.issue).subscribe(issue=>{
       console.log(issue);
     }, err => {
       this.formIssueError = true;
