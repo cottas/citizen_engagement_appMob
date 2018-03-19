@@ -25,5 +25,11 @@ export class IssuesProvider {
     console.log(id);
     return this.http.get<Issue>(URL_API + '/issues/' + id);
   }
+  
+  insertData(issue: Issue): Observable<Issue> {
+    console.log("C'est passé dans le provider");
+    const issueUrl = `${config.apiUrl}/issues`;
+    return this.http.post<Issue>(issueUrl, issue);
+  }
 
 }
