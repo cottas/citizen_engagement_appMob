@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, ViewController } from 'ionic-angular';
 
 /**
  * Generated class for the IssueDetailsPage page.
@@ -14,11 +14,15 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class IssueDetailsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl : ViewController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad IssueDetailsPage');
+  }
+  
+  public closeModal(){
+     this.viewCtrl.dismiss();
   }
 
 }
