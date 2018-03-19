@@ -4,15 +4,25 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
+
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>IssueDetails</ion-title>
-  </ion-navbar>
+<ion-navbar>
+    <ion-title>Issue's details</ion-title>
+    <ion-buttons end>
+    <button ion-button (click)="closeModal()">Close</button>
+    </ion-buttons>
+</ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-  Details: {{ navParams.data.foo }}
+
+<ion-img src="{{ navParams.data.selected_issue.imageUrl }}"></ion-img>
+<p class="description">{{ navParams.data.selected_issue.description }}</p>
+
 </ion-content>
+
+
+

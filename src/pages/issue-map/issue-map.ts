@@ -1,7 +1,10 @@
+import { Issue } from "../../models/issue";
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
-import { latLng, Map, MapOptions, marker, Marker, tileLayer } from 'leaflet';
+import { NavController, NavParams, ModalController } from 'ionic-angular';
+import { latLng, Map, MapOptions, Marker, tileLayer } from 'leaflet';
 import { IssuesProvider } from '../../providers/issues/issues';
+import { IssueDetailsPage } from "../issue-details/issue-details";
+import * as L from "leaflet";
 
 /**
  * Generated class for the IssueMapPage page.
@@ -18,8 +21,13 @@ export class IssueMapPage {
   map: Map;
   mapMarkers: Marker[];
   mapOptions: MapOptions;
+  extendedMarker = L.Marker.extend({
+    initialize: function(id) {
+      this.id = id;
+    }
+  });
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public issues: IssuesProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public issues: IssuesProvider, public modalCtrl: ModalController) {
     this.mapOptions = {
       layers: [
         tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 18})
@@ -29,15 +37,19 @@ export class IssueMapPage {
     };
   }
 
-  onClickMarker(event) {
-    alert("hi. you clicked the marker at " + event.latlng);
+  onClickMarker(element) {
+    console.log(element.id);
+    this.issues.getIssue(element.id).subscribe(issue => {
+      console.log(issue);
+      this.openModal(issue);
+    });
   }
-
+    
   onMapReady(map: Map) {
     this.map = map;
     
     this.getAllIssues();
-      
+
     this.map.on('moveend', () => {
       const center = this.map.getCenter();
       console.log(`Map moved to ${center.lng}, ${center.lat}`);
@@ -56,12 +68,19 @@ export class IssueMapPage {
            resBody = false;
         } else {
             data.forEach(element => {
-                const newMarker = marker([element.location.coordinates[1], element.location.coordinates[0]]).on('click', this.onClickMarker);
+                const newMarker = L.marker([element.location.coordinates[1], element.location.coordinates[0]]).on('click', () => {
+                    this.onClickMarker(element);
+                }).bindTooltip(element.description);
                 this.mapMarkers.push(newMarker);
             });
             page++;
         }
     }
+  }
+  
+  openModal(issue: Issue){
+   let profileModal = this.modalCtrl.create(IssueDetailsPage, {selected_issue:issue});
+   profileModal.present();
   }
     
 }
