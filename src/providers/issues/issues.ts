@@ -1,6 +1,7 @@
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {Issue} from '../../models/issue';
+import {Comment} from '../../models/comment';
 import {Observable} from 'rxjs/Observable';
 
 
@@ -24,6 +25,10 @@ export class IssuesProvider {
   getIssue(id: string): Observable<Issue> {
     console.log(id);
     return this.http.get<Issue>(URL_API + '/issues/' + id);
+  }
+
+  getCommentsFromIssue(issue_id: string): Observable<Comment[]> {
+    return this.http.get<Comment[]>(URL_API + '/issues/' + issue_id + "/comments");
   }
 
 }
