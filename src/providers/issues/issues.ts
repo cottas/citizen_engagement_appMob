@@ -1,11 +1,13 @@
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {Issue} from '../../models/issue';
+import {IssueType} from '../../models/issue-type';
+import {IssueRequest} from '../../models/issue-request';
 import {Comment} from '../../models/comment';
 import {Observable} from 'rxjs/Observable';
-import { config } from '../../app/config';
+import {config} from '../../app/config';
 
-const URL_API = 'https://comem-citizen-engagement.herokuapp.com/api';
+const URL_API = config.apiUrl;
 
 @Injectable()
 export class IssuesProvider {
@@ -24,7 +26,7 @@ export class IssuesProvider {
   }
 
   insertData(issue: Issue): Observable<Issue> {
-    console.log("C'est passé dans le provider");
+    console.log("C'est passé dans insert data");
     const issueUrl = `${config.apiUrl}/issues`;
     return this.http.post<Issue>(issueUrl, issue);
   }
@@ -33,4 +35,8 @@ export class IssuesProvider {
     return this.http.get<Comment[]>(URL_API + '/issues/' + issue_id + "/comments");
   }
 
+  getIssueTypes(): Observable<IssueType[]> {
+    console.log("C'est passé dans getIssueTypes");
+    return this.http.get<IssueType[]>(config.apiUrl + '/issueTypes');
+  }
 }
