@@ -70,6 +70,7 @@ for iOS devices.
 <a name="login"></a>
 ### Login & Sign Up
 
+<img src="resources/screenshots/login.png" height="800" width="auto"/>
 ![Login](resources/screenshots/login.png)
 ![SignUp](resources/screenshots/signup.png)
 
