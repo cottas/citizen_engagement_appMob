@@ -64,15 +64,15 @@ export class IssueMapPage {
         const data = await this.issues.getIssues(page, 50);
         console.log(data);
         console.log(data.length);
-        if (data.length == 0) {
-           resBody = false;
+        data.forEach(element => {
+            const newMarker = L.marker([element.location.coordinates[1], element.location.coordinates[0]]).on('click', () => {
+                this.onClickMarker(element);
+            }).bindTooltip(element.description);
+            this.mapMarkers.push(newMarker);
+        });
+        if (data.length < 50) {
+            resBody = false;
         } else {
-            data.forEach(element => {
-                const newMarker = L.marker([element.location.coordinates[1], element.location.coordinates[0]]).on('click', () => {
-                    this.onClickMarker(element);
-                }).bindTooltip(element.description);
-                this.mapMarkers.push(newMarker);
-            });
             page++;
         }
     }

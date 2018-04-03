@@ -6,14 +6,120 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>IssueList</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>Issue List</ion-title>
+    </ion-navbar>
+
+    <ion-toolbar no-border-top>
+        <ion-segment [(ngModel)]="status" (ionChange)="segmentChanged(status)">
+            <ion-segment-button value="all" class="title_list">All</ion-segment-button>
+            <ion-segment-button value="new" class="title_list">New</ion-segment-button>
+            <ion-segment-button value="inProgress" class="title_list">In Progress</ion-segment-button>
+            <ion-segment-button value="rejected" class="title_list">Rejected</ion-segment-button>
+            <ion-segment-button value="resolved" class="title_list">Resolved</ion-segment-button>
+        </ion-segment>
+    </ion-toolbar>
 
 </ion-header>
 
 
-<ion-content padding>
-  Let's list the issues.
-  <button ion-button (click)='goToDetails()'>Go to details</button>
+<ion-content padding>    
+    <div [ngSwitch]="status">
+
+        <div *ngSwitchCase="'all'">
+            <ion-card *ngFor='let issue of issuesList' (click)="goToDetails(issue)">
+                <img *ngIf="issue.imageUrl" src="{{issue.imageUrl}}">
+                <ion-card-content>
+                    <p>
+                        <ion-icon name="md-calendar"></ion-icon>{{issue.createdAt}} - {{issue.state}}</p>
+                    <p>{{issue.description}}</p>
+                </ion-card-content>
+                <ion-row no-padding>
+                    <ion-col>
+                        <button ion-button clear small icon-start>
+            <ion-icon name="ios-arrow-dropright-circle-outline"></ion-icon>
+            <div>See details</div>
+          </button>
+                    </ion-col>
+                </ion-row>
+            </ion-card>
+        </div>
+
+        <div *ngSwitchCase="'new'">
+            <ion-card *ngFor='let issue of issuesList' (click)="goToDetails(issue)">
+                <img *ngIf="issue.imageUrl" src="{{issue.imageUrl}}">
+                <ion-card-content>
+                    <p>
+                        <ion-icon name="md-calendar"></ion-icon>{{issue.createdAt}} - {{issue.state}}</p>
+                    <p>{{issue.description}}</p>
+                </ion-card-content>
+                <ion-row no-padding>
+                    <ion-col>
+                        <button ion-button clear small icon-start>
+              <ion-icon name="ios-arrow-dropright-circle-outline"></ion-icon>
+              <div>See details</div>
+            </button>
+                    </ion-col>
+                </ion-row>
+            </ion-card>
+        </div>
+
+        <div *ngSwitchCase="'inProgress'">
+            <ion-card *ngFor='let issue of issuesList' (click)="goToDetails(issue)">
+                <img *ngIf="issue.imageUrl" src="{{issue.imageUrl}}">
+                <ion-card-content>
+                    <p>
+                        <ion-icon name="md-calendar"></ion-icon>{{issue.createdAt}} - {{issue.state}}</p>
+                    <p>{{issue.description}}</p>
+                </ion-card-content>
+                <ion-row no-padding>
+                    <ion-col>
+                        <button ion-button clear small icon-start>
+              <ion-icon name="ios-arrow-dropright-circle-outline"></ion-icon>
+              <div>See details</div>
+            </button>
+                    </ion-col>
+                </ion-row>
+            </ion-card>
+        </div>
+
+        <div *ngSwitchCase="'rejected'">
+            <ion-card *ngFor='let issue of issuesList' (click)="goToDetails(issue)">
+                <img *ngIf="issue.imageUrl" src="{{issue.imageUrl}}">
+                <ion-card-content>
+                    <p>
+                        <ion-icon name="md-calendar"></ion-icon>{{issue.createdAt}} - {{issue.state}}</p>
+                    <p>{{issue.description}}</p>
+                </ion-card-content>
+                <ion-row no-padding>
+                    <ion-col>
+                        <button ion-button clear small icon-start>
+              <ion-icon name="ios-arrow-dropright-circle-outline"></ion-icon>
+              <div>See details</div>
+            </button>
+                    </ion-col>
+                </ion-row>
+            </ion-card>
+        </div>
+
+        <div *ngSwitchCase="'resolved'">
+            <ion-card *ngFor='let issue of issuesList' (click)="goToDetails(issue)">
+                <img *ngIf="issue.imageUrl" src="{{issue.imageUrl}}">
+                <ion-card-content>
+                    <p>
+                        <ion-icon name="md-calendar"></ion-icon>{{issue.createdAt}} - {{issue.state}}</p>
+                    <p>{{issue.description}}</p>
+                </ion-card-content>
+                <ion-row no-padding>
+                    <ion-col>
+                        <button ion-button clear small icon-start>
+              <ion-icon name="ios-arrow-dropright-circle-outline"></ion-icon>
+              <div>See details</div>
+            </button>
+                    </ion-col>
+                </ion-row>
+            </ion-card>
+        </div>
+
+    </div>
 </ion-content>

@@ -21,6 +21,10 @@ export class IssuesProvider {
     console.log(id);
     return this.http.get<Issue>(config.apiUrl + '/issues/' + id);
   }
+    
+  getIssuesFilteredByStatus(page: number, pageSize: number, status: string): Promise<Issue[]> {
+    return this.http.get<Issue[]>(config.apiUrl + '/issues?page=' + page + '&pageSize=' + pageSize + '&state=' + status).toPromise();
+  }
 
   insertData(issue: Issue): Observable<Issue> {
     console.log("C'est passé dans le provider");
