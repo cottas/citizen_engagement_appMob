@@ -9,6 +9,7 @@ export class Issue {
   issueTypeHref: IssueType;
   state:string;
   location: {
-    coordinates:[number]
-  }
+      coordinates: [number, number],
+      type: string
+  };
 }

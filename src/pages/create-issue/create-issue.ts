@@ -2,13 +2,17 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
+import { NavController } from 'ionic-angular';
 
 import { config } from '../../app/config';
 import { QimgImage } from '../../models/qimg-image';
 import { AuthProvider } from '../../providers/auth/auth';
 import { PictureProvider } from '../../providers/picture/picture';
+
 import { Issue } from '../../models/issue';
 import { IssuesProvider } from '../../providers/issues/issues';
+import { IssueRequest } from '../../models/issue-request';
+
 
 /**
  * Generated class for the CreateIssuePage page.
@@ -24,38 +28,37 @@ export class CreateIssuePage {
   picture: QimgImage;
   issue : Issue ;
   formIssueError: boolean;
-  
+  issueRequest: IssueRequest;
+
   constructor(
     private auth: AuthProvider,
     private geolocation: Geolocation,
     private httpClient: HttpClient,
     private pictureService: PictureProvider,
     private platform: Platform,
-    private issuesProvider : IssuesProvider
+    private issuesProvider : IssuesProvider,
   ) {
     this.issue = new Issue();
-    console.log(this.issue);
-
+    this.issueRequest = {
+                  location: {
+                    coordinates: [0, 0],
+                    type: "Point"
+                  },
+                  description: '',
+                  tags: this.tags,
+                  imageUrl: '',
+                  issueTypeHref: ''
+                };
   }
-
   ionViewDidLoad() {
     console.log('ionViewDidLoad CreateIssuePage');
     const url = `${config.apiUrl}/issueTypes`;
     this.httpClient.get(url).subscribe(issueTypes => {
       console.log('Issue types loaded', issueTypes);
-    });
-
-    this.platform.ready().then(() => {
-      const geolocationPromise = this.geolocation.getCurrentPosition();
-      geolocationPromise.then(position => {
-        console.log(`User is at ${position.coords.longitude}, ${position.coords.latitude}`);
-      }, err => {
-        console.warn(`Could not retrieve user position because: ${err.message}`);
-      });
+      this.getIssueTypes();
     });
 
   }
-
   logOut() {
     this.auth.logOut();
   }
@@ -68,24 +71,40 @@ export class CreateIssuePage {
     });
   }
 
+  getIssueTypes(){
+    this.issuesProvider.getIssueTypes().subscribe(issueTypes => {
+      console.log(issueTypes);
+      this.issueTypes = issueTypes;
+    });
+  }
+
   onSubmit($event) {
-    console.log(this.issue);
     console.log('c est passé dans submit');
-    // Prevent default HTML form behavior.
     $event.preventDefault();
-    // Do not do anything if the form is invalid.
-    //if (this.form.invalid) {
-    //  return;
-    //}
-    // Hide any previous login error.
-    //this.loginError = false;
+    this.platform.ready().then(() => {
+      const geolocationPromise = this.geolocation.getCurrentPosition();
+      geolocationPromise.then(position => {
+        console.log(`User is at ${position.coords.longitude}, ${position.coords.latitude}`);
+        this.issueRequest.location = {
+          "type": "Point",
+          "coordinates": [
+            position.coords.longitude,
+            position.coords.latitude
+          ]
+        };
+      }, err => {
+        console.warn(`Could not retrieve user position because: ${err.message}`);
+      });
+    });
+
     // Insertion of the issue into the API .
-    this.issuesProvider.insertData(this.issue).subscribe(issue=>{
-      console.log(issue);
+    console.log(this.issueRequest);
+    this.issuesProvider.insertData(this.issueRequest).subscribe(issue=>{
     }, err => {
       //this.formIssueError = true;
       console.warn(`Authentication failed: ${err.message}`);
     });
+
   }
 
 

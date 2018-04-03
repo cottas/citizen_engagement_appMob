@@ -26,15 +26,24 @@
       <!-- Description input -->
       <ion-item>
         <ion-label floating>Description</ion-label>
-        <ion-input type="text" name="description"  [(ngModel)]="issue.description"></ion-input>
+        <ion-input type="text" name="description"  [(ngModel)]="issueRequest.description"></ion-input>
       </ion-item>
+
       <ion-item>
         <ion-label floating>Tags</ion-label>
-        <ion-input type="text" name="tags"  [(ngModel)]="issue.tags"></ion-input>
+        <ion-input type="text" name="tags"  [(ngModel)]="issueRequest.tags"></ion-input>
       </ion-item>
+
+      <ion-item>
+        <ion-label floating>Issue Type</ion-label>
+        <ion-select interface="popover" name="issueType" [(ngModel)]="issueRequest.issueTypeHref" required>
+          <ion-option *ngFor="let issueType of issueTypes" value="/api/issueTypes/{{issueType.id}}">{{issueType.name}}</ion-option>
+        </ion-select>
+      </ion-item>
+
       <button ion-button (click)='takePicture()'>Take picture</button>
       <img *ngIf='picture' [src]='picture.url' />
       <!-- Submit button input -->
-      <button type="submit" (click)='onSubmit($event)' [disabled]="form.invalid" ion-button block>Log in</button>
+      <button type="submit" (click)='onSubmit($event)' [disabled]="form.invalid" ion-button block>Create issue</button>
   </form>
 </ion-content>
