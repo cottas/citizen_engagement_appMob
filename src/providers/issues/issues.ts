@@ -13,7 +13,7 @@ export class IssuesProvider {
   }
 
   getIssues(page: number, pageSize: number) : Promise<Issue[]> {
-    return this.http.get<Issue[]>(config.apiUrl + '/issues?page=' + page + '&pageSize=' + pageSize).toPromise();
+    return this.http.get<Issue[]>(config.apiUrl + '/issues?page=' + page + '&pageSize=' + pageSize + '&include=creator&include=issueType').toPromise();
   }
 
   getIssue(id: string): Observable<Issue> {
@@ -21,7 +21,7 @@ export class IssuesProvider {
   }
     
   getIssuesFilteredByStatus(page: number, pageSize: number, status: string): Promise<Issue[]> {
-    return this.http.get<Issue[]>(config.apiUrl + '/issues?page=' + page + '&pageSize=' + pageSize + '&state=' + status).toPromise();
+    return this.http.get<Issue[]>(config.apiUrl + '/issues?page=' + page + '&pageSize=' + pageSize + '&state=' + status + '&include=creator&include=issueType').toPromise();
   }
 
   insertData(issue: Issue): Observable<Issue> {
