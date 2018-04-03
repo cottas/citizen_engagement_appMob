@@ -70,8 +70,7 @@ for iOS devices.
 <a name="login"></a>
 ### Login & Sign Up
 
-<img src="resources/screenshots/login.png" height="800" width="auto"/>
-<img src="resources/screenshots/signup.png" height="800" width="auto"/>
+| <img src="resources/screenshots/login.png" height="800" width="auto"/> | <img src="resources/screenshots/signup.png" height="800" width="auto"/> |
 
 When starting the application, you will either have to login or sign up to the application, which will log you in automatically once you have signed up successfully.
 To sign up you will have to enter the following data:
