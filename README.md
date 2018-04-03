@@ -70,6 +70,9 @@ for iOS devices.
 <a name="login"></a>
 ### Login & Sign Up
 
+![Login](resources/screenshots/login.png)
+![SignUp](resources/screenshots/signup.png)
+
 When starting the application, you will either have to login or sign up to the application, which will log you in automatically once you have signed up successfully.
 To sign up you will have to enter the following data:
 * Username
@@ -82,11 +85,16 @@ To sign up you will have to enter the following data:
 <a name="map"></a>
 ### The Map & Issue Details
 
+![Map](resources/screenshots/map.png)
+![Issue Details](resources/screenshots/issueDetail.png)
+
 After the login, the application takes you to the map that shows you the reported issues in your area. By clicking on an issue, a page is going to pop up, showing the issue's details including a picture (optionally), the date of report, the authors name, the description and comments. Click "CLOSE" in the top right corner to close the page.
 
 
 <a name="filtering"></a>
 ### Filtering
+
+![Filtering](resources/screenshots/filtering.png)
 
 By clicking on the Filter icon in the top right corner of the map screen, the application is going to show you the list with all the issues in your area. You can then filter the issues by the following categories:
 * All
@@ -101,11 +109,15 @@ When clicking on an issue, again, you can see the issues details. Hit the back-a
 <a name="commenting"></a>
 ### Commenting Issues
 
+![Commenting Issues](resources/screenshots/commentIssue.png)
+
 In order to post a comment on an issue you will have to open the details page of the issue and start writing your comment in the textbox. After that click send, simple as that!
 
 
 <a name="creating"></a>
 ### Creating Issues
+
+![Creating Issues](resources/screenshots/createIssue.png)
 
 In order to report an issue, click on the "Create an issue" button on the map page. On the CreateIssue page, fill in the following gaps:
 * Description
