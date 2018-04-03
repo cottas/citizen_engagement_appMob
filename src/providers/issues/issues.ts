@@ -3,7 +3,6 @@ import {Injectable} from '@angular/core';
 import {Issue} from '../../models/issue';
 import {IssueType} from '../../models/issue-type';
 import {IssueRequest} from '../../models/issue-request';
-import {Comment} from '../../models/comment';
 import {Observable} from 'rxjs/Observable';
 import {config} from '../../app/config';
 
@@ -27,7 +26,7 @@ export class IssuesProvider {
     return this.http.get<Issue[]>(config.apiUrl + '/issues?page=' + page + '&pageSize=' + pageSize + '&state=' + status + '&include=creator&include=issueType').toPromise();
   }
 
-  insertData(issue: Issue): Observable<Issue> {
+  insertData(issue: IssueRequest): Observable<Issue> {
     console.log("C'est passé dans insert data");
     const issueUrl = `${config.apiUrl}/issues`;
     return this.http.post<Issue>(issueUrl, issue);

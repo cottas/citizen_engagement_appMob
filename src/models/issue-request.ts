@@ -5,6 +5,6 @@ description: string;
       coordinates: [number, number],
       type: string
   };
-  tags: string[];
+  tags: string;
   issueTypeHref: string;
 }

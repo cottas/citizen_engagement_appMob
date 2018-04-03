@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
-import { NavController } from 'ionic-angular';
 
 import { config } from '../../app/config';
 import { QimgImage } from '../../models/qimg-image';
@@ -12,6 +11,7 @@ import { PictureProvider } from '../../providers/picture/picture';
 import { Issue } from '../../models/issue';
 import { IssuesProvider } from '../../providers/issues/issues';
 import { IssueRequest } from '../../models/issue-request';
+import { IssueType } from "../../models/issue-type";
 
 
 /**
@@ -29,6 +29,7 @@ export class CreateIssuePage {
   issue : Issue ;
   formIssueError: boolean;
   issueRequest: IssueRequest;
+  issueTypes: IssueType[];
 
   constructor(
     private auth: AuthProvider,
@@ -45,7 +46,7 @@ export class CreateIssuePage {
                     type: "Point"
                   },
                   description: '',
-                  tags: this.tags,
+                  tags: '',
                   imageUrl: '',
                   issueTypeHref: ''
                 };
