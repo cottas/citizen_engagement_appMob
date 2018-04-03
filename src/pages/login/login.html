@@ -14,18 +14,19 @@
 
 
 <ion-content padding>
+ <!-- LOGIN -->
   <form (submit)="onSubmit($event)">
     <ion-list>
 
       <!-- Name input -->
       <ion-item>
-        <ion-label floating>Name</ion-label>
+        <ion-label floating>Username</ion-label>
         <ion-input type="text" name="name" #nameInput="ngModel" [(ngModel)]="authRequest.name" required></ion-input>
       </ion-item>
 
       <!-- Error message displayed if the name is invalid -->
       <ion-item *ngIf="nameInput.invalid && nameInput.dirty" no-lines>
-        <p ion-text color="danger">Name is required.</p>
+        <p ion-text color="danger">Username is required.</p>
       </ion-item>
 
       <!-- Password input -->
@@ -44,11 +45,17 @@
     <div padding>
 
       <!-- Submit button -->
-      <button type="submit" [disabled]="form.invalid" ion-button block>Log in</button>
+      <button type="submit" [disabled]="form.invalid" ion-button block outline>Log in</button>
 
       <!-- Error message displayed if the login failed -->
       <p *ngIf="loginError" ion-text color="danger">Name or password is invalid.</p>
 
     </div>
   </form>
+  
+  <div padding>
+      <!-- Submit button -->
+      <button ion-button block outline (click)='goToSignin()'>No account yet?</button>
+  </div>
+  
 </ion-content>

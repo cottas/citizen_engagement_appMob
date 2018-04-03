@@ -21,7 +21,7 @@ export class CommentDetailsPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CommentDetailsPage');
+    console.log(this.comment);
   }
 
 }

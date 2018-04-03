@@ -31,10 +31,13 @@ export class HomePage {
     ];
   }
 
-   logOut() {
+  logOut() {
     this.auth.logOut();
   }
-  goToPage(){
+  goToPage() {
     this.navCtrl.push(CreateIssuePage);
+  }
+  filter() {
+      this.navCtrl.push(IssueListPage);
   }
 }

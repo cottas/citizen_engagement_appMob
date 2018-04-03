@@ -7,7 +7,6 @@ import {Comment} from '../../models/comment';
 import {Observable} from 'rxjs/Observable';
 import {config} from '../../app/config';
 
-const URL_API = config.apiUrl;
 
 @Injectable()
 export class IssuesProvider {
@@ -17,12 +16,15 @@ export class IssuesProvider {
   }
 
   getIssues(page: number, pageSize: number) : Promise<Issue[]> {
-    return this.http.get<Issue[]>(URL_API + '/issues?page=' + page + '&pageSize=' + pageSize).toPromise();
+    return this.http.get<Issue[]>(config.apiUrl + '/issues?page=' + page + '&pageSize=' + pageSize).toPromise();
   }
 
   getIssue(id: string): Observable<Issue> {
-    console.log(id);
-    return this.http.get<Issue>(URL_API + '/issues/' + id);
+    return this.http.get<Issue>(config.apiUrl + '/issues/' + id + "?include=issueType&include=creator");
+  }
+
+  getIssuesFilteredByStatus(page: number, pageSize: number, status: string): Promise<Issue[]> {
+    return this.http.get<Issue[]>(config.apiUrl + '/issues?page=' + page + '&pageSize=' + pageSize + '&state=' + status).toPromise();
   }
 
   insertData(issue: Issue): Observable<Issue> {
@@ -30,11 +32,7 @@ export class IssuesProvider {
     const issueUrl = `${config.apiUrl}/issues`;
     return this.http.post<Issue>(issueUrl, issue);
   }
-
-  getCommentsFromIssue(issue_id: string): Observable<Comment[]> {
-    return this.http.get<Comment[]>(URL_API + '/issues/' + issue_id + "/comments");
-  }
-
+  
   getIssueTypes(): Observable<IssueType[]> {
     console.log("C'est passé dans getIssueTypes");
     return this.http.get<IssueType[]>(config.apiUrl + '/issueTypes');
