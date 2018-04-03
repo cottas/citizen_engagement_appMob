@@ -18,9 +18,13 @@
 
 
 <ion-content padding>
+<div class="img_container">
+<img class="issue_img" src="{{ navParams.data.selected_issue.imageUrl }}">
+</div>
 
-<ion-img src="{{ navParams.data.selected_issue.imageUrl }}"></ion-img>
+<p class="caption">Reported the 12.03.1996 by Philippe Spat</p>
 <p class="description">{{ navParams.data.selected_issue.description }}</p>
+<page-comments-list [issue_id]="navParams.data.selected_issue.id"></page-comments-list>
 
 </ion-content>
 

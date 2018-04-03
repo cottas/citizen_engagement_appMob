@@ -1,3 +1,5 @@
+import { CommentDetailsPage } from "../pages/comment-details/comment-details";
+import { CommentsListPage } from "../pages/comments-list/comments-list";
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -29,7 +31,9 @@ import { IssuesProvider } from '../providers/issues/issues';
     IssueDetailsPage,
     IssueListPage,
     IssueMapPage,
-    LoginPage
+    LoginPage,
+    CommentsListPage, 
+    CommentDetailsPage
   ],
   imports: [
     BrowserModule,
@@ -46,7 +50,9 @@ import { IssuesProvider } from '../providers/issues/issues';
     IssueDetailsPage,
     IssueListPage,
     IssueMapPage,
-    LoginPage
+    LoginPage, 
+    CommentsListPage, 
+    CommentDetailsPage
   ],
   providers: [
     StatusBar,
