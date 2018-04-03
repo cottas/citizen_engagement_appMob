@@ -1,4 +1,3 @@
-import {IssuesProvider} from "../../providers/issues/issues";
 import {OnInit, Component, Input} from "@angular/core";
 import {NavController, NavParams} from 'ionic-angular';
 import {Comment} from "../../models/comment";

@@ -1,7 +1,6 @@
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {Issue} from '../../models/issue';
-import {Comment} from '../../models/comment';
 import {Observable} from 'rxjs/Observable';
 import {config} from '../../app/config';
 
@@ -18,7 +17,7 @@ export class IssuesProvider {
   }
 
   getIssue(id: string): Observable<Issue> {
-    return this.http.get<Issue>(URL_API + '/issues/' + id + "?include=issueType&include=creator");
+    return this.http.get<Issue>(config.apiUrl + '/issues/' + id + "?include=issueType&include=creator");
   }
     
   getIssuesFilteredByStatus(page: number, pageSize: number, status: string): Promise<Issue[]> {

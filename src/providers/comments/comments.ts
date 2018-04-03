@@ -2,6 +2,7 @@ import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {Observable} from "rxjs";
 import {Comment} from '../../models/Comment';
+import {config} from '../../app/config';
 
 /*
   Generated class for the CommentProvider provider.
@@ -10,7 +11,6 @@ import {Comment} from '../../models/Comment';
   and Angular DI.
 */
 
-const URL_API = 'https://comem-citizen-engagement.herokuapp.com/api';
 
 @Injectable()
 export class CommentsProvider {
@@ -20,11 +20,11 @@ export class CommentsProvider {
   }
 
   getCommentsFromIssue(issue_id: string): Observable<Comment[]> {
-    return this.http.get<Comment[]>(URL_API + '/issues/' + issue_id + "/comments?include=author");
+    return this.http.get<Comment[]>(config.apiUrl + '/issues/' + issue_id + "/comments?include=author");
   }
 
   postCommentOnIssue(issue_id: string, text: string): Observable<Comment> {
-    return this.http.post<Comment>(URL_API + '/issues/' + issue_id + "/comments", {"text": text}).pipe();
+    return this.http.post<Comment>(config.apiUrl  + '/issues/' + issue_id + "/comments", {"text": text}).pipe();
   }
 }
 
