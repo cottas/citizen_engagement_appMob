@@ -84,8 +84,7 @@ To sign up you will have to enter the following data:
 <a name="map"></a>
 ### The Map & Issue Details
 
-<img src="resources/screenshots/map.png" height="800" width="auto"/>
-<img src="resources/screenshots/issueDetail.png" height="800" width="auto"/>
+<img src="resources/screenshots/map.png" height="600" width="auto"/> <img src="resources/screenshots/issueDetail.png" height="600" width="auto"/>
 
 After the login, the application takes you to the map that shows you the reported issues in your area. By clicking on an issue, a page is going to pop up, showing the issue's details including a picture (optionally), the date of report, the authors name, the description and comments. Click "CLOSE" in the top right corner to close the page.
 
@@ -93,7 +92,7 @@ After the login, the application takes you to the map that shows you the reporte
 <a name="filtering"></a>
 ### Filtering
 
-<img src="resources/screenshots/filtering.png" height="800" width="auto"/>
+<img src="resources/screenshots/filtering.png" height="600" width="auto"/>
 
 By clicking on the Filter icon in the top right corner of the map screen, the application is going to show you the list with all the issues in your area. You can then filter the issues by the following categories:
 * All
@@ -108,7 +107,7 @@ When clicking on an issue, again, you can see the issues details. Hit the back-a
 <a name="commenting"></a>
 ### Commenting Issues
 
-<img src="resources/screenshots/commentIssue.png" height="800" width="auto"/>
+<img src="resources/screenshots/commentIssue.png" height="600" width="auto"/>
 
 In order to post a comment on an issue you will have to open the details page of the issue and start writing your comment in the textbox. After that click send, simple as that!
 
@@ -116,7 +115,7 @@ In order to post a comment on an issue you will have to open the details page of
 <a name="creating"></a>
 ### Creating Issues
 
-<img src="resources/screenshots/createIssue.png" height="800" width="auto"/>
+<img src="resources/screenshots/createIssue.png" height="600" width="auto"/>
 
 In order to report an issue, click on the "Create an issue" button on the map page. On the CreateIssue page, fill in the following gaps:
 * Description
