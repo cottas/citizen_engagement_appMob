@@ -22,6 +22,8 @@ import { AuthProvider } from '../providers/auth/auth';
 import { AuthInterceptorProvider } from '../providers/auth-interceptor/auth-interceptor';
 import { PictureProvider } from '../providers/picture/picture';
 import { IssuesProvider } from '../providers/issues/issues';
+import { SigninPage } from '../pages/signin/signin';
+import { UsersProvider } from '../providers/users/users';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { IssuesProvider } from '../providers/issues/issues';
     IssueMapPage,
     LoginPage,
     CommentsListPage, 
-    CommentDetailsPage
+    CommentDetailsPage,
+    SigninPage
   ],
   imports: [
     BrowserModule,
@@ -52,7 +55,8 @@ import { IssuesProvider } from '../providers/issues/issues';
     IssueMapPage,
     LoginPage, 
     CommentsListPage, 
-    CommentDetailsPage
+    CommentDetailsPage,
+    SigninPage
   ],
   providers: [
     StatusBar,
@@ -63,7 +67,8 @@ import { IssuesProvider } from '../providers/issues/issues';
     Geolocation,
     Camera,
     PictureProvider,
-    IssuesProvider
+    IssuesProvider,
+    UsersProvider
   ]
 })
 export class AppModule {}

@@ -3,9 +3,8 @@ import {Injectable} from '@angular/core';
 import {Issue} from '../../models/issue';
 import {Comment} from '../../models/comment';
 import {Observable} from 'rxjs/Observable';
-import { config } from '../../app/config';
+import {config} from '../../app/config';
 
-const URL_API = 'https://comem-citizen-engagement.herokuapp.com/api';
 
 @Injectable()
 export class IssuesProvider {
@@ -15,12 +14,12 @@ export class IssuesProvider {
   }
     
   getIssues(page: number, pageSize: number) : Promise<Issue[]> {
-    return this.http.get<Issue[]>(URL_API + '/issues?page=' + page + '&pageSize=' + pageSize).toPromise();
+    return this.http.get<Issue[]>(config.apiUrl + '/issues?page=' + page + '&pageSize=' + pageSize).toPromise();
   }
 
   getIssue(id: string): Observable<Issue> {
     console.log(id);
-    return this.http.get<Issue>(URL_API + '/issues/' + id);
+    return this.http.get<Issue>(config.apiUrl + '/issues/' + id);
   }
   
   insertData(issue: Issue): Observable<Issue> {
@@ -30,7 +29,7 @@ export class IssuesProvider {
   }
 
   getCommentsFromIssue(issue_id: string): Observable<Comment[]> {
-    return this.http.get<Comment[]>(URL_API + '/issues/' + issue_id + "/comments");
+    return this.http.get<Comment[]>(config.apiUrl + '/issues/' + issue_id + "/comments");
   }
 
 }

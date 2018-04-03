@@ -5,3 +5,6 @@ node_modules/
 .project
 www/
 .sourcemaps/
+plugins/
+platforms/
+src/app/config.ts
