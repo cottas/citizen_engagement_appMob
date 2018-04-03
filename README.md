@@ -7,14 +7,14 @@ Welcome to the Citizen Engagement Mobile Application! This applicaiton offers th
 
 ## Index
 
-1. [Installation](#installation)
-2. [Usage](#usage)
-2.1. [Login & Signup](#login)
-2.2. [The Map & Issue Details](#map)
-2.3. [Filtering](#filtering)
-2.4. [Commenting Issues](#commenting)
-2.5. [Creating Issues](#creating)
-2.6. [Filtering](#logout)
+[Installation](#installation)
+[Usage](#usage)
+[Login & Signup](#login)
+[The Map & Issue Details](#map)
+[Filtering](#filtering)
+[Commenting Issues](#commenting)
+[Creating Issues](#creating)
+[Filtering](#logout)
 
 
 
