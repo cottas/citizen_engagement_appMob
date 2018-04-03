@@ -23,6 +23,9 @@ import { AuthInterceptorProvider } from '../providers/auth-interceptor/auth-inte
 import { PictureProvider } from '../providers/picture/picture';
 import { IssuesProvider } from '../providers/issues/issues';
 import { CommentsProvider } from '../providers/comments/comments';
+import { SigninPage } from '../pages/signin/signin';
+import { UsersProvider } from '../providers/users/users';
+
 
 @NgModule({
   declarations: [
@@ -34,7 +37,8 @@ import { CommentsProvider } from '../providers/comments/comments';
     IssueMapPage,
     LoginPage,
     CommentsListPage, 
-    CommentDetailsPage
+    CommentDetailsPage,
+    SigninPage
   ],
   imports: [
     BrowserModule,
@@ -53,7 +57,8 @@ import { CommentsProvider } from '../providers/comments/comments';
     IssueMapPage,
     LoginPage, 
     CommentsListPage, 
-    CommentDetailsPage
+    CommentDetailsPage,
+    SigninPage
   ],
   providers: [
     StatusBar,
@@ -65,7 +70,8 @@ import { CommentsProvider } from '../providers/comments/comments';
     Camera,
     PictureProvider,
     IssuesProvider,
-    CommentsProvider
+    CommentsProvider,
+    UsersProvider
   ]
 })
 export class AppModule {}
