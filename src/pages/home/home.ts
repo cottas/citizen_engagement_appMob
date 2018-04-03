@@ -17,7 +17,7 @@ export interface HomePageTab {
   templateUrl: 'home.html'
 })
 export class HomePage {
-
+  createIssuePage = CreateIssuePage;
   tabs: HomePageTab[];
 
   constructor(
@@ -30,8 +30,11 @@ export class HomePage {
       { title: 'Issue List', icon: 'list', component: IssueListPage }
     ];
   }
+
    logOut() {
     this.auth.logOut();
   }
-
+  goToPage(){
+    this.navCtrl.push(CreateIssuePage);
+  }
 }

@@ -83,7 +83,7 @@ export class CreateIssuePage {
     this.issuesProvider.insertData(this.issue).subscribe(issue=>{
       console.log(issue);
     }, err => {
-      this.formIssueError = true;
+      //this.formIssueError = true;
       console.warn(`Authentication failed: ${err.message}`);
     });
   }

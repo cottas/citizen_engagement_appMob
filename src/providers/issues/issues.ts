@@ -12,7 +12,7 @@ export class IssuesProvider {
   constructor(public http: HttpClient) {
 
   }
-    
+
   getIssues(page: number, pageSize: number) : Promise<Issue[]> {
     return this.http.get<Issue[]>(config.apiUrl + '/issues?page=' + page + '&pageSize=' + pageSize).toPromise();
   }
@@ -21,7 +21,7 @@ export class IssuesProvider {
     console.log(id);
     return this.http.get<Issue>(config.apiUrl + '/issues/' + id);
   }
-  
+
   insertData(issue: Issue): Observable<Issue> {
     console.log("C'est passé dans le provider");
     const issueUrl = `${config.apiUrl}/issues`;
