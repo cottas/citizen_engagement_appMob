@@ -9,8 +9,8 @@ This project was created following these [setup instructions](https://github.com
 Clone this project, then:
 
 ```bash
-git clone https://github.com/MediaComem/comem-citizen-engagement-ionic-starter.git
-cd comem-citizen-engagement-ionic-starter
+git clone git@github.com:cottas/citizen_engagement_appMob.git
+cd citizen_engagement_appMob
 npm install
 ```
 
@@ -29,6 +29,28 @@ Fill in appropriate values in `src/app/config.ts`.
 Run in development mode in the browser with:
 
 ```bash
-cd comem-citizen-engagement-ionic-starter
+cd citizen_engagement_appMob
 ionic serve
 ```
+
+Or deploy the app to your smartphone with either:
+
+```bash
+cd citizen_engagement_appMob
+ionic cordova run android --device
+```
+for android devices,
+
+or:
+
+```bash
+cd citizen_engagement_appMob
+ionic cordova run ios --device
+```
+for iOS devices.
+
+
+
+## Login & Sign Up
+
+When starting the application, ...
