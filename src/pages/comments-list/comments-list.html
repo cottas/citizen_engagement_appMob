@@ -7,7 +7,19 @@
 
 
 <h1>Comments:</h1>
-<div *ngFor='let comment of comments'>
-<page-comment-details [comment]='comment'></page-comment-details>
+
+<form #form='ngForm' (submit)="onSubmit(form)">
+	<ion-input type="text" (input)='onChange($event)'
+		[(ngModel)]='newcomment.text'
+		placeholder="Write a new comment here..." required maxlength=500
+		name="newcomment.text"></ion-input>
+	<button type="submit" [disabled]='form.invalid' ion-button>Send</button>
+</form>
+
+<div *ngIf="comments.length > 0; else noCommentBlock">
+	<div *ngFor='let comment of comments'>
+		<page-comment-details [comment]='comment'></page-comment-details>
+	</div>
 </div>
+<ng-template #noCommentBlock><div>No comments yet.</div></ng-template>
 

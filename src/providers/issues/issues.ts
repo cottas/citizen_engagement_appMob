@@ -20,7 +20,7 @@ export class IssuesProvider {
 
   getIssue(id: string): Observable<Issue> {
     console.log(id);
-    return this.http.get<Issue>(URL_API + '/issues/' + id);
+    return this.http.get<Issue>(URL_API + '/issues/' + id + "?include=issueType&include=creator");
   }
   
   insertData(issue: Issue): Observable<Issue> {
@@ -28,9 +28,6 @@ export class IssuesProvider {
     const issueUrl = `${config.apiUrl}/issues`;
     return this.http.post<Issue>(issueUrl, issue);
   }
-
-  getCommentsFromIssue(issue_id: string): Observable<Comment[]> {
-    return this.http.get<Comment[]>(URL_API + '/issues/' + issue_id + "/comments");
-  }
+  
 
 }

@@ -22,7 +22,8 @@
 <img class="issue_img" src="{{ navParams.data.selected_issue.imageUrl }}">
 </div>
 
-<p class="caption">Reported the 12.03.1996 by Philippe Spat</p>
+<p class="caption">Reported the {{navParams.data.selected_issue.createdAt}} by {{navParams.data.selected_issue.creator.firstname}} {{navParams.data.selected_issue.creator.name}} </p>
+<p class="type"> {{ navParams.data.selected_issue.issueType.description }}</p>
 <p class="description">{{ navParams.data.selected_issue.description }}</p>
 <page-comments-list [issue_id]="navParams.data.selected_issue.id"></page-comments-list>
 

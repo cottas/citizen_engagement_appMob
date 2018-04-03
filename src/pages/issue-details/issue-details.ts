@@ -13,7 +13,7 @@ import { NavController, NavParams, ViewController } from 'ionic-angular';
   templateUrl: 'issue-details.html',
 })
 export class IssueDetailsPage {
-
+  
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl : ViewController) {
   }
 

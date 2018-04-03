@@ -22,6 +22,7 @@ import { AuthProvider } from '../providers/auth/auth';
 import { AuthInterceptorProvider } from '../providers/auth-interceptor/auth-interceptor';
 import { PictureProvider } from '../providers/picture/picture';
 import { IssuesProvider } from '../providers/issues/issues';
+import { CommentsProvider } from '../providers/comments/comments';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,7 @@ import { IssuesProvider } from '../providers/issues/issues';
     IonicModule.forRoot(MyApp),
     HttpClientModule,
     IonicStorageModule.forRoot(),
-    LeafletModule.forRoot()
+    LeafletModule.forRoot(),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -63,7 +64,8 @@ import { IssuesProvider } from '../providers/issues/issues';
     Geolocation,
     Camera,
     PictureProvider,
-    IssuesProvider
+    IssuesProvider,
+    CommentsProvider
   ]
 })
 export class AppModule {}
